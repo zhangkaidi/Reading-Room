@@ -1,0 +1,6 @@
+<view class="editer">
+ <form bindsubmit="bindFormSubmit" data-id="{{text.id}}" data-i="{{text.i}}">
+    <textarea placeholder='心情随笔，记录点滴' auto-height="100%" maxlength="400" name="textarea"  value="{{text.text}}" auto-focus></textarea>
+    <button class="submit"  form-type="submit">确认</button>
+</form>
+</view>

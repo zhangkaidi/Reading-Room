@@ -1,0 +1,12 @@
+<view class="notes-wrap">
+<view class="new-notes">
+<button bindtap='add'>添加notes</button>
+</view>
+<block wx:for="{{notes}}" wx:for-item="notes" >
+<view bindtap="editer" data-editerid="{{notes.id}}">
+  <text>{{notes.time}}</text>
+  <text>{{notes.text}}</text>
+  <button catchtap="remove" data-removeid="{{notes.id}}"  data-index="{{index}}" >删除</button>
+</view>
+</block>
+</view>
