@@ -25,8 +25,13 @@ Page({
       arr.unshift(content);
       wx.setStorageSync(that.data.storageKey, arr);
     }
-    wx.redirectTo({
-      url: '../notes/notes'
+    wx.switchTab({
+      url: '../notes/notes',
+      success: function (e) {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad(); 
+      }
     }) //编辑完成跳转列表页面
   },
   onLoad: function (options) {

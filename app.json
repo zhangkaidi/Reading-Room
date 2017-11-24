@@ -1,10 +1,25 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/notes/notes",
+    "pages/my/my",
     "pages/editer/editer",
     "pages/logs/logs"
   ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/notes/notes",
+      "text": "记录",
+      "iconPath": "/img/home.png",
+      "selectedIconPath": "/img/home-selected.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "个人中心",
+      "iconPath": "/img/my.png",
+      "selectedIconPath": "/img/my-selected.png"
+    }
+    ]    
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

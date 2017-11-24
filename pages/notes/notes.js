@@ -1,7 +1,9 @@
 Page({
   data: {
     storageKey: "key",//本地存储key
-    notes: [] //记录列表
+    notes: [] ,//记录列表,
+    loading:true,
+    more:true
   },
   //删除数据
   remove: function (event) {
@@ -25,7 +27,7 @@ Page({
   },
   //跳转增加页面
   add: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../editer/editer'
     })
   },

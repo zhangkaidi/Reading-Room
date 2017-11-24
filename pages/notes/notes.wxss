@@ -1,0 +1,30 @@
+.editer-img{
+  position: fixed;
+  width:55rpx;
+  height:55rpx;
+  bottom:80rpx;
+  right:70rpx;
+}
+.delete-img{
+  position:absolute;
+  right:10rpx;
+  width:45rpx;
+  height:45rpx;
+  top:40rpx;
+}
+.notes-time{
+  color:#333;
+  font-size: 14px;
+  padding-left:24rpx;
+}
+.notes-text{
+  color:#1296db;
+  padding-left:24rpx;
+}
+.notes-time+.notes-text{
+  display: block;
+}
+.notes-list{
+  position: relative;
+  line-height: 60rpx;
+}
