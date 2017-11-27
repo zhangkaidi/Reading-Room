@@ -14,17 +14,14 @@ Page({
     var i = e.currentTarget.dataset.i;//编辑时对应数据的index
     var storage = wx.getStorageSync(that.data.storageKey);//取本地存储的数据
     var content = { id: id, time: time, text: text }; //存储数据
-    if (storage) { //本地有数据
-      if (editerId) { //有需要编辑的数据
+    //是否有编辑的数据
+    if (editerId) { 
         storage.splice(i, 1)
-      }
-      storage.unshift(content);
-      wx.setStorageSync(that.data.storageKey, storage);
-    } else { //本地无数据
-      var arr = [];
-      arr.unshift(content);
-      wx.setStorageSync(that.data.storageKey, arr);
     }
+    //存储数据
+    storage.unshift(content);
+    wx.setStorageSync(that.data.storageKey, storage);
+    //编辑完成跳转列表页面
     wx.switchTab({
       url: '../notes/notes',
       success: function (e) {
@@ -32,7 +29,7 @@ Page({
         if (page == undefined || page == null) return;
         page.onLoad(); 
       }
-    }) //编辑完成跳转列表页面
+    }) 
   },
   onLoad: function (options) {
     //页面加载，判断有无其他页面传递的参数
