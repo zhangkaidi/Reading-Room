@@ -1,17 +1,19 @@
 Page({
   data: {
     storageKey: "key",//本地存储key
-    notes: [] ,//记录列表,
-    loading:true,
-    more:true
+    notes: []//记录列表,
+  },
+  removeKey: function (key, i) {
+    key.splice(i, 1)
+    return key
   },
   //删除数据
   remove: function (event) {
-    var that = this;
-    var removeId = event.currentTarget.dataset.removeid;//通过data- 获取删除的id
-    var i = event.currentTarget.dataset.index;//通过data- 获取删除的index
-    var key = that.data.notes;//取数据
-    key.splice(i, 1);//删除数据
+    var that = this,
+      removeId = event.currentTarget.dataset.removeid,//通过data- 获取删除的id
+      i = event.currentTarget.dataset.index,//通过data- 获取删除的index
+      key = that.data.notes;//取数据
+    that.removeKey(key, i);//删除数据
     this.setData({
       notes: key
     });//重新渲染页面
