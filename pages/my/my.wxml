@@ -9,10 +9,13 @@
   </view>
   <view class="weui">
     <view class="weui-grid" bindtap="invoiceAssistant">
+      <image class="icon1" src="../../img/invoice.png"></image>
       <text>发票助手</text>
     </view>
-    <view class="weui-grid" bindtap="scan">
-      <text>扫一扫</text>
+    <view class="weui-grid">
+      <contact-button class="contact" type="default-dark" size="27" session-from="weapp">
+      </contact-button>
+      <text>在线客服</text>  
     </view>
   </view>
   <view class="usermotto">

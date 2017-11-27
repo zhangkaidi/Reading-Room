@@ -22,14 +22,6 @@ Page({
       }
     })
   },
-  //扫一扫
-  scan:function(){
-    wx.scanCode({
-      success: (res) => {
-        console.log(res)
-      }
-    })
-  },
   onLoad: function () {
     //console.log(app.globalData);
     if (app.globalData.userInfo) {

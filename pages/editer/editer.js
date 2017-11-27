@@ -4,9 +4,9 @@ Page({
     text: {},//记录数据
     storageKey: "key" //本地存储key
   },
-  editerId: function (storage, i) {
-    storage.splice(i, 1);
-    return storage
+  editerId: function (data, i) {
+    data.splice(i, 1);
+    return data
   },
   //提交所编辑的数据
   bindFormSubmit: function (e) {
@@ -15,8 +15,11 @@ Page({
       time = util.getLocalTime(id),//时间time
       text = e.detail.value.textarea,//内容
       editerId = e.currentTarget.dataset.id,//编辑时对应的id
-      storage = wx.getStorageSync(that.data.storageKey),//取本地存储的数据
+      storage = wx.getStorageSync(that.data.storageKey)||[],//取本地存储的数据
       content = { id: id, time: time, text: text };//存储数据
+    if(text==""){
+      return;
+    }
     //是否有编辑的数据
     if (editerId) {
       var i = e.currentTarget.dataset.i;//编辑时对应数据的index

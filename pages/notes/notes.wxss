@@ -20,6 +20,10 @@
 .notes-text{
   color:#1296db;
   padding-left:24rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  width: 650rpx;
 }
 .notes-time+.notes-text{
   display: block;
