@@ -1,0 +1,4 @@
+<!--pages/book/book.wxml-->
+<view>
+<text>标题：</text><text>{{title}}</text>
+</view>

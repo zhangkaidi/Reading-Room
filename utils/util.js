@@ -14,7 +14,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 const getLocalTime = nS => {
-  return new Date(parseInt(nS) * 1000).toLocaleString().substr(0, 17)
+  return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
 }
 
 const getUnixTime = () =>{

@@ -16,9 +16,30 @@ Page({
     })
   },
   //调发票助手
-  invoiceAssistant:function(){
+  invoiceAssistant: function () {
     wx.chooseInvoiceTitle({
       success(res) {
+      }
+    })
+  },
+  //扫描书籍信息
+  scanBook: function () {
+    var that = this;
+    wx.scanCode({
+      success: (res) => {
+        var data = res.result;
+        wx.request({
+          url: "https://api.douban.com/v2/book/isbn/" + data,
+          data: {},
+          header: { 'Content-Type': 'application/x-www-form-urlencode' },
+          success: function (res) {
+            //跳转编辑页面
+            var title = res.data.title
+            wx.navigateTo({
+              url: '../book/book?title=' + title
+            })
+          }
+        })
       }
     })
   },

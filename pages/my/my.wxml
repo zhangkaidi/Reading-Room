@@ -8,6 +8,10 @@
     </block>
   </view>
   <view class="weui">
+    <view class="weui-grid" bindtap="scanBook">
+      <image class="icon1" src="../../img/book.png"></image>
+      <text>扫描书籍</text>
+    </view>
     <view class="weui-grid" bindtap="invoiceAssistant">
       <image class="icon1" src="../../img/invoice.png"></image>
       <text>发票助手</text>
@@ -15,7 +19,7 @@
     <view class="weui-grid">
       <contact-button class="contact" type="default-dark" size="27" session-from="weapp">
       </contact-button>
-      <text>在线客服</text>  
+      <text>在线客服</text>
     </view>
   </view>
   <view class="usermotto">
