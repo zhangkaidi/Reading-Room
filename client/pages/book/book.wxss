@@ -1,0 +1,5 @@
+/* pages/book/book.wxss */
+.img{
+  width:200rpx;
+  height:200rpx;
+}

@@ -1,0 +1,16 @@
+<view class="notes-wrap">
+<!-- <scroll-view class="search-result" scroll-y="true" style="height: 1108rpx;" bindscrolltolower="lower"  lower-threshold="0" > -->
+<block wx:for="{{notes}}" wx:for-item="notes" >
+  <view class="notes-list" bindtap="editer" data-editerid="{{notes.id}}">
+    <text class="notes-time">{{notes.time}}</text>
+    <text class="notes-text">{{notes.text}}</text>
+    <image class="delete-img" src="/img/delete.png" catchtap="remove" data-removeid="{{notes.id}}"  data-index="{{index}}"></image>
+  </view>
+</block>
+ <!-- <view class="load-content" style="display:{{loading?'block':'none'}};">
+     <text class="weui-loading" style="display:{{more?'inline-block':'none'}};"></text>
+     <text class="loading-text">{{more?'玩命加载中':'没有数据了'}}</text>
+  </view>
+</scroll-view> -->
+<image bindtap='add' class="editer-img" src="../../img/editer.png"></image>
+</view>

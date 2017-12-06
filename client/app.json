@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/bookList/bookList",
+    "pages/notes/notes",
+    "pages/my/my",
+    "pages/book/book",
+    "pages/editer/editer",
+    "pages/logs/logs"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/bookList/bookList",
+        "text": "书库",
+        "iconPath": "/img/books.png",
+        "selectedIconPath": "/img/books-selected.png"
+      },
+      {
+        "pagePath": "pages/notes/notes",
+        "text": "备忘录",
+        "iconPath": "/img/notes.png",
+        "selectedIconPath": "/img/notes-selected.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "个人中心",
+        "iconPath": "/img/my.png",
+        "selectedIconPath": "/img/my-selected.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "记录",
+    "navigationBarTextStyle": "black"
+  }
+}
