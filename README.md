@@ -19,5 +19,9 @@ wx.switchTab({
       }  
     })
 ```
+### 三：
+> 问题：页面之间传对象参数
+
+> 解决办法：A-->B A页面传递参数先JSON.stringify(data)，B页面接收参数先JSON.parse(data)
 
 
