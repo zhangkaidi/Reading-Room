@@ -1,1 +1,43 @@
 /* pages/bookShow/bookShow.wxss */
+image{
+  width:200rpx;
+  height:240rpx;
+}
+view{
+  font-size: 12px;
+}
+.lt{
+  float:left;
+}
+.clear{
+  clear: both;
+  margin-bottom:5px;
+}
+.clear {
+  zoom: 1;
+}
+.clear:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0
+  }
+.book-list{
+  padding:0 12rpx;
+}
+.lt-con{
+  padding:0 2px;
+  width:240px;
+  
+}
+.title{
+  font-size: 14px;
+  text-align: center;
+  color: #1296db;
+}
+.summary{
+  text-overflow: hidden;
+  height:50px;
+  overflow: hidden;
+}

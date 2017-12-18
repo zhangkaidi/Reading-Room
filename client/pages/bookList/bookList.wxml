@@ -1,2 +1,31 @@
 <!--pages/bookShow/bookShow.wxml-->
-<view>书籍展示页面</view>
+<view class="book-list">
+  <block wx:for="{{bookList}}">
+    <view class="clear">
+      <view class="lt">
+        <image src="{{item.imgMi}}"></image>
+      </view>
+      <view class="lt">
+        <view class="lt-con title">
+          <text>{{item.title}}</text>
+        </view>
+        <view class="lt-con summary">
+          简介：
+          <text>{{item.summary}}</text>
+        </view>
+        <view class="lt-con ">
+          作者：
+          <text>{{item.author}}</text>
+        </view>
+         <view class="lt-con ">
+          出版社：
+          <text>{{item.publisher}}</text>
+        </view>
+         <view class="lt-con ">
+          价格：
+          <text>{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

@@ -5,14 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    bookList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    wx.request({
+      url: "http://localhost:8085/api/getBooks",
+      data: {},
+      method: 'get',
+      success: function (res) {
+        if (res) {
+          //传递参数，setdata给user
+          that.setData({
+            bookList: res.data
+          })
+        }
+      }
+    })
   },
 
   /**

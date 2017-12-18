@@ -1,16 +1,17 @@
 <!--pages/book/book.wxml-->
-<view>
+<view class="book-message">
+  <view>
+    <image class="img" src="{{bookMessage.imgMi}}"></image>
+  </view>
   <view>
     <text>标题：</text>
     <text>{{bookMessage.title}}</text>
   </view>
   <view>
     <text>作者：</text>
-    <text>{{bookMessage.author[0]}}</text>
-  </view>
-  <view>
-    <text>图片：</text>
-    <image class="img" src="{{bookMessage.imgMi}}"></image>
+    <block wx:for="{{bookMessage.author+' '}}">
+      <text >{{item}}</text>
+    </block>
   </view>
   <view>
     <text>出版社：</text>
@@ -24,5 +25,5 @@
     <text>定价：</text>
     <text>{{bookMessage.price}}</text>
   </view>
-  <button>发布</button>
 </view>
+<button class="publish"  bindtap="publishBook">发布</button>
