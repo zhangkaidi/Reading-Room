@@ -1,5 +1,6 @@
 # wxapp
-
+## 演示
+![](showtime.gif)
 ## 记录遇到的问题
 ### 一:
 > 问题：app.json中设置了tabBar为页面指定的页面A，在其他页面使用navigateTo无法实现跳转A页面
