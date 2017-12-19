@@ -34,7 +34,6 @@ Page({
   },
   onLoad: function (options) {
     var obj = JSON.parse(options.str)
-    console.log(obj);
     this.setData({
       bookMessage: obj
     })

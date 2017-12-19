@@ -6,12 +6,15 @@ const router = express.Router();
 // 创建书籍信息
 router.post('/api/createBooks', (req, res) => {
   let booksMessage = new models.books({
+    id: req.body.id,
     title: req.body.title,
     author: req.body.author,
     imgMi: req.body.imgMi,
     publisher: req.body.publisher,
     summary: req.body.summary,
-    price: req.body.price
+    price: req.body.price,
+    user:"",
+    state:false
   });
   // 保存数据booksMessage数据进mongoDB
   booksMessage.save((err, data) => {

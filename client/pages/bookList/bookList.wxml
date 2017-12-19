@@ -5,7 +5,7 @@
       <view class="lt">
         <image src="{{item.imgMi}}"></image>
       </view>
-      <view class="lt">
+      <view class="lt detail">
         <view class="lt-con title">
           <text>{{item.title}}</text>
         </view>
@@ -17,15 +17,22 @@
           作者：
           <text>{{item.author}}</text>
         </view>
-         <view class="lt-con ">
+        <view class="lt-con ">
           出版社：
           <text>{{item.publisher}}</text>
         </view>
-         <view class="lt-con ">
+        <view class="lt-con ">
           价格：
           <text>{{item.price}}</text>
         </view>
       </view>
+      <view class="lt state" data-id="{{item.id}}" bindtap="borrow">
+        <text wx:if="{{item.state}}">借阅中..</text>
+        <text wx:else>点击借阅</text>
+      </view>
     </view>
   </block>
+</view>
+<view>
+  <image bindtap="scanBook" class="scan-img" src="../../img/scan.png"></image>
 </view>

@@ -22,35 +22,6 @@ Page({
       }
     })
   },
-  //扫描书籍信息
-  scanBook: function () {
-    var that = this;
-    wx.scanCode({
-      success: (res) => {
-        var data = res.result;
-        wx.request({
-          url: "https://api.douban.com/v2/book/isbn/" + data,
-          data: {},
-          header: { 'Content-Type': 'application/x-www-form-urlencode' },
-          success: function (res) {
-            //跳转编辑页面
-            var bookMessage = {
-              title :res.data.title,
-              author : res.data.author,
-              imgMi :res.data.images.medium,
-              publisher : res.data.publisher,
-              summary :res.data.summary,
-              price : res.data.price
-            },
-            str = JSON.stringify(bookMessage);
-            wx.navigateTo({
-              url: '../book/book?str=' + str
-            })
-          }
-        })
-      }
-    })
-  },
   onLoad: function () {
     //console.log(app.globalData);
     if (app.globalData.userInfo) {

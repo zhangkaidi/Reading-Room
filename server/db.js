@@ -13,13 +13,15 @@ db.once('open', () => console.log('Mongo connection successed'));
  *图书信息
  */
 const bookMessage = new mongoose.Schema({
-  id: mongoose.Schema.Types.ObjectId,
+  id:String,
+  user:String,
   title: String,
   author: String,
   imgMi: String,
   publisher: String,
   summary: String,
-  price:String
+  price:String,
+  state:Boolean
 });
 
 

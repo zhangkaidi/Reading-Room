@@ -3,7 +3,7 @@
   width:55rpx;
   height:55rpx;
   bottom:80rpx;
-  right:70rpx;
+  right:95rpx;
 }
 .delete-img{
   position:absolute;

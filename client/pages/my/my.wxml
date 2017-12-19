@@ -8,9 +8,9 @@
     </block>
   </view>
   <view class="weui">
-    <view class="weui-grid" bindtap="scanBook">
+    <view class="weui-grid book-img">
       <image class="icon1" src="../../img/book.png"></image>
-      <text>扫描书籍</text>
+      <text>书籍管理</text>
     </view>
     <view class="weui-grid" bindtap="invoiceAssistant">
       <image class="icon1" src="../../img/invoice.png"></image>
