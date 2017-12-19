@@ -25,6 +25,17 @@ router.post('/api/createBooks', (req, res) => {
     }
   });
 });
+// 更新书籍信息
+router.put('/api/updateBooks', (req, res) => {
+  // 保存数据booksMessage数据进mongoDB
+  models.books.update({ id: req.body.id }, { $set: { state: req.body.state } },(err, data) => {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(true);
+    }
+  });
+});
 
 //获取书籍信息  
 router.get('/api/getBooks', (req, res) => {
