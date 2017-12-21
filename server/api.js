@@ -62,7 +62,6 @@ router.get('/api/getBorrowBooks', (req, res) => {
       res.json(err);
       console.log(err);
     } else {
-      console.log(data);
       if (!!data) {
         res.json(data);
       } else {
