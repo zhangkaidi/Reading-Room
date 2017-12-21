@@ -32,3 +32,6 @@
   position: relative;
   line-height: 60rpx;
 }
+.notes-text{
+  font-size: 14px;
+}

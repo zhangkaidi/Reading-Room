@@ -43,11 +43,13 @@ Page({
       url: '../editer/editer'
     })
   },
-  //页面加载
-  onLoad: function () {
+  init: function () {
     var that = this;
     this.setData({
       notes: wx.getStorageSync(that.data.storageKey)
     })
+  },
+  onShow: function () {
+    this.init();
   }
 })

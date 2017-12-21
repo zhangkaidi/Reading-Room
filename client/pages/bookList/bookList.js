@@ -1,10 +1,27 @@
 // pages/bookShow/bookShow.js
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    bookList:[]
+    bookList: [],
+    userInfo: {}
+  },
+  init: function () {
+    var that = this;
+    wx.request({
+      url: "http://localhost:8085/api/getBooks",
+      data: {},
+      method: 'get',
+      success: function (res) {
+        if (res) {
+          that.setData({
+            bookList: res.data
+          })
+        }
+      }
+    })
   },
   //扫描书籍信息
   scanBook: function () {
@@ -27,9 +44,9 @@ Page({
               publisher: res.data.publisher,
               summary: res.data.summary,
               price: res.data.price,
-              state:false
+              state: false
             },
-            str = JSON.stringify(bookMessage);
+              str = JSON.stringify(bookMessage);
             wx.navigateTo({
               url: '../book/book?str=' + str
             })
@@ -39,75 +56,39 @@ Page({
     })
   },
   //借书
-  borrow:function(e){
-    var id = e.currentTarget.dataset.id;
-    console.log(id)
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    var that = this;
+  borrow: function (e) {
+    var id = e.target.dataset.id,
+      state = e.target.dataset.state,
+      user = app.globalData.userInfo.nickName,
+      that = this;
+    if (state) {
+      state = false
+    } else {
+      state = true
+    };
     wx.request({
-      url: "http://localhost:8085/api/getBooks",
-      data: {},
-      method: 'get',
+      url: "http://localhost:8085/api/updateBooks",
+      data: {
+        id: id,
+        user: user,
+        state: state
+      },
+      method: 'put',
       success: function (res) {
-        if (res) {
-          that.setData({
-            bookList: res.data
+        if (res.data) {
+          wx.showToast({
+            title: '借阅成功',
+            icon: 'success',
+            duration: 1000,
+            success: function () {
+              that.init();
+            }
           })
         }
       }
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+    this.init();
   }
 })

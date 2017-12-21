@@ -5,6 +5,7 @@
     "pages/my/my",
     "pages/book/book",
     "pages/editer/editer",
+    "pages/borrow/borrow",
     "pages/logs/logs"
   ],
   "tabBar": {

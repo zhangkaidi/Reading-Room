@@ -31,11 +31,6 @@ Page({
     //编辑完成跳转列表页面
     wx.switchTab({
       url: '../notes/notes',
-      success: function (e) {
-        var page = getCurrentPages().pop();
-        if (page == undefined || page == null) return;
-        page.onLoad();
-      }
     })
   },
   onLoad: function (options) {

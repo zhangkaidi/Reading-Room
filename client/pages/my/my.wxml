@@ -8,7 +8,7 @@
     </block>
   </view>
   <view class="weui">
-    <view class="weui-grid book-img">
+    <view class="weui-grid book-img" bindtap="control">
       <image class="icon1" src="../../img/book.png"></image>
       <text>书籍管理</text>
     </view>

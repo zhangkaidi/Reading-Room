@@ -1,6 +1,7 @@
+<!--pages/borrow/borrow.wxml-->
 <!--pages/bookShow/bookShow.wxml-->
 <view class="book-list">
-  <block wx:for="{{bookList}}">
+  <block wx:for="{{bookList}}" wx:if="{{item.state}}" >
     <view class="clear">
       <view class="lt">
         <image src="{{item.imgMi}}"></image>
@@ -27,12 +28,8 @@
         </view>
       </view>
       <view class="lt state">
-        <text wx:if="{{item.state}}">借阅中..</text>
-        <text data-state="{{item.state}}" data-id="{{item.id}}" bindtap="borrow" wx:else>点击借阅</text>
+        <text data-state="{{item.state}}" data-id="{{item.id}}" bindtap="borrow" >还书</text>
       </view>
     </view>
   </block>
-</view>
-<view>
-  <image bindtap="scanBook" class="scan-img" src="../../img/scan.png"></image>
 </view>

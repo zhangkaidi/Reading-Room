@@ -51,6 +51,11 @@ Page({
       })
     }
   },
+  control: function () {
+    wx.navigateTo({
+      url: '../borrow/borrow'
+    })
+  },
   getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

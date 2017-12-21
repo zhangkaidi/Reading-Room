@@ -13,8 +13,8 @@ router.post('/api/createBooks', (req, res) => {
     publisher: req.body.publisher,
     summary: req.body.summary,
     price: req.body.price,
-    user:"",
-    state:false
+    user: "",
+    state: false
   });
   // 保存数据booksMessage数据进mongoDB
   booksMessage.save((err, data) => {
@@ -28,7 +28,7 @@ router.post('/api/createBooks', (req, res) => {
 // 更新书籍信息
 router.put('/api/updateBooks', (req, res) => {
   // 保存数据booksMessage数据进mongoDB
-  models.books.update({ id: req.body.id }, { $set: { state: req.body.state } },(err, data) => {
+  models.books.update({ id: req.body.id }, { $set: { user: req.body.user, state: req.body.state } }, (err, data) => {
     if (err) {
       res.json(err);
     } else {
@@ -52,5 +52,23 @@ router.get('/api/getBooks', (req, res) => {
       }
     }
   });
+});
+//获取用户借阅的书籍信息  
+router.get('/api/getBorrowBooks', (req, res) => {
+  console.log(req.query.user);
+  // 通过模型去查找数据库
+  models.books.find({ user: req.query.user }, (err, data) => {
+    if (err) {
+      res.json(err);
+      console.log(err);
+    } else {
+      console.log(data);
+      if (!!data) {
+        res.json(data);
+      } else {
+        res.json('none');
+      }
+    }
+  })
 })
 module.exports = router;
