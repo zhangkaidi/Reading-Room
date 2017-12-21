@@ -88,7 +88,15 @@ Page({
       }
     })
   },
+  onReady: function () {
+    wx.hideLoading()
+  },
   onShow: function () {
     this.init();
+  },
+  onLoad:function(){
+    wx.showLoading({
+      title: '加载中'
+    })
   }
 })

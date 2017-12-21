@@ -71,7 +71,6 @@ router.get('/api/getBorrowBooksId', (req, res) => {
 })
 //获取用户借阅的书籍信息  
 router.get('/api/getBorrowBooks', (req, res) => {
-  console.log(req.query.user);
   // 通过模型去查找数据库
   models.books.find({ user: req.query.user }, (err, data) => {
     if (err) {
