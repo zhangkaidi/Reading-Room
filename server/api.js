@@ -53,6 +53,22 @@ router.get('/api/getBooks', (req, res) => {
     }
   });
 });
+//获取书籍Id  
+router.get('/api/getBorrowBooksId', (req, res) => {
+  // 通过模型去查找数据库
+  models.books.find({ id: req.query.id }, (err, data) => {
+    if (err) {
+      res.json(err);
+      console.log(err);
+    } else {
+      if (data.length==0) {
+        res.json(false);
+      } else {
+        res.json(true);
+      }
+    }
+  })
+})
 //获取用户借阅的书籍信息  
 router.get('/api/getBorrowBooks', (req, res) => {
   console.log(req.query.user);

@@ -26,4 +26,4 @@
     <text>{{bookMessage.price}}</text>
   </view>
 </view>
-<button class="publish"  bindtap="publishBook">发布</button>
+<button class="publish"  bindtap="checkId">发布</button>
