@@ -10,16 +10,16 @@
   <view class="weui">
     <view class="weui-grid book-img" bindtap="control">
       <image class="icon1" src="../../img/book.png"></image>
-      <text>书籍管理</text>
+      <text class="text">还书</text>
     </view>
     <view class="weui-grid" bindtap="invoiceAssistant">
       <image class="icon1" src="../../img/invoice.png"></image>
-      <text>发票助手</text>
+      <text class="text">发票</text>
     </view>
     <view class="weui-grid">
       <contact-button class="contact" type="default-dark" size="27" session-from="weapp">
       </contact-button>
-      <text>在线客服</text>
+      <text class="text">客服</text>
     </view>
   </view>
   <view class="usermotto">

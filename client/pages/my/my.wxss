@@ -43,7 +43,11 @@
   margin-left: 13px;
   margin-bottom: 11px;
 }
-
+.weui-grid .text{
+  display: inline-block;
+  width:120rpx;
+  text-align: center;
+}
 .contact {
   margin-top: 12px;
   margin-left: 12px;

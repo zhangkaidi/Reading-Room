@@ -12,7 +12,7 @@ Page({
     wx.request({
       url: "http://localhost:8085/api/getBorrowBooks",
       data: {
-        user: "减肥是一件头疼的事"
+        user: app.globalData.userInfo.nickName
       },
       method: 'get',
       success: function (res) {
