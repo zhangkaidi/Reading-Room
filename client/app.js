@@ -31,6 +31,38 @@ App({
       }
     })
   },
+  //扫描书籍信息
+  scanBook: function () {
+    let that = this;
+    wx.scanCode({
+      success: res => {
+        let id = res.result;
+        wx.request({
+          url: "https://api.douban.com/v2/book/isbn/" + id,
+          data: {},
+          header: { 'Content-Type': 'application/x-www-form-urlencode' },
+          success: res => {
+            //跳转编辑页面
+            let bookMessage = {
+              id: id,
+              user: "",
+              title: res.data.title,
+              author: res.data.author,
+              imgMi: res.data.images.medium,
+              publisher: res.data.publisher,
+              summary: res.data.summary,
+              price: res.data.price,
+              state: false
+            },
+              str = JSON.stringify(bookMessage);
+            wx.navigateTo({
+              url: '../book/book?str=' + str
+            })
+          }
+        })
+      }
+    })
+  },
   globalData: {
     userInfo: null
   }

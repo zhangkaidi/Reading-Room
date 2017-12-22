@@ -1,37 +1,43 @@
-.editer-img{
+.editer-img {
   position: fixed;
-  width:55rpx;
-  height:55rpx;
-  bottom:80rpx;
-  right:95rpx;
+  width: 55rpx;
+  height: 55rpx;
+  bottom: 80rpx;
+  right: 95rpx;
 }
-.delete-img{
-  position:absolute;
-  right:10rpx;
-  width:45rpx;
-  height:45rpx;
-  top:40rpx;
+
+.delete-img {
+  position: absolute;
+  right: 10rpx;
+  width: 45rpx;
+  height: 45rpx;
+  top: 40rpx;
 }
-.notes-time{
-  color:#333;
+
+.notes-time {
+  color: #333;
   font-size: 14px;
-  padding-left:24rpx;
+  padding-left: 24rpx;
 }
-.notes-text{
-  color:#1296db;
-  padding-left:24rpx;
+
+.notes-text {
+  color: #1296db;
+  padding-left: 24rpx;
   overflow: hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 650rpx;
 }
-.notes-time+.notes-text{
+
+.notes-time+.notes-text {
   display: block;
 }
-.notes-list{
+
+.notes-list {
   position: relative;
   line-height: 60rpx;
 }
-.notes-text{
+
+.notes-text {
   font-size: 14px;
 }

@@ -9,21 +9,22 @@ Page({
   },
   //删除数据
   remove: function (event) {
-    var that = this,
-      removeId = event.currentTarget.dataset.removeid,//通过data- 获取删除的id
-      i = event.currentTarget.dataset.index,//通过data- 获取删除的index
-      key = that.data.notes;//取数据
+    let that = this;
+    let indexData = {
+      i: event.currentTarget.dataset.index,//通过data- 获取删除的index
+      key: that.data.notes//取数据
+    }
     //提示信息
     wx.showModal({
       title: '提示',
       content: '确认删除数据？',
-      success: function (res) {
+      success: res => {
         if (res.confirm) {
-          that.removeKey(key, i);//删除数据
+          that.removeKey(indexData.key, indexData.i);//删除数据
           that.setData({
-            notes: key
+            notes: indexData.key
           });//重新渲染页面
-          wx.setStorageSync(that.data.storageKey, key);
+          wx.setStorageSync(that.data.storageKey, indexData.key);
         } else if (res.cancel) {
           console.log('取消')
         }
@@ -32,20 +33,20 @@ Page({
   },
   //跳转编辑页面
   editer: function (event) {
-    var id = event.currentTarget.dataset.editerid;
+    let id = event.currentTarget.dataset.editerid;
     wx.navigateTo({
       url: '../editer/editer?id=' + id
     });
   },
-  //跳转增加页面
+  //跳转添加页面
   add: function () {
     wx.navigateTo({
       url: '../editer/editer'
     })
   },
   init: function () {
-    var that = this;
-    this.setData({
+    let that = this;
+    that.setData({
       notes: wx.getStorageSync(that.data.storageKey)
     })
   },

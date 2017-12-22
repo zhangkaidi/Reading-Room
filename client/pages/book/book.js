@@ -1,4 +1,5 @@
 // pages/book/book.js
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -7,23 +8,22 @@ Page({
     bookMessage: {}
   },
   checkId: function () {
-    var that = this;
-    var bookId = this.data.bookMessage.id;
+    let that = this;
+    let bookId = this.data.bookMessage.id;
     wx.request({
       url: "http://localhost:8085/api/getBorrowBooksId",
       data: {
         id: bookId
       },
-      success: function (res) {
+      success: res => {
         if (res.data) {
           wx.showModal({
             title: '提示',
-            content: '此书存在，是否重新扫描添加？',
+            content: '此书存在，是否扫描其它书籍？',
             success: function (res) {
               if (res.confirm) {
-                wx.switchTab({
-                  url: '../bookList/bookList',
-                })
+                wx.navigateBack();
+                app.scanBook();
               } else if (res.cancel) {
                 console.log('用户点击取消')
               }
@@ -36,12 +36,12 @@ Page({
     })
   },
   publishBook: function () {
-    var data = this.data.bookMessage;
+    let data = this.data.bookMessage;
     wx.request({
       url: "http://localhost:8085/api/createBooks",
       data: data,
       method: 'post',
-      success: function (res) {
+      success: res => {
         if (res) {
           //编辑完成跳转列表页面
           wx.switchTab({
@@ -52,7 +52,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    var obj = JSON.parse(options.str);
+    let obj = JSON.parse(options.str);
     this.setData({
       bookMessage: obj
     })

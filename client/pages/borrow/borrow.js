@@ -7,28 +7,26 @@ Page({
   data: {
     bookList: []
   },
+  //初识化
   init: function () {
-    var that = this;
+    let that = this;
     wx.request({
       url: "http://localhost:8085/api/getBorrowBooks",
       data: {
         user: app.globalData.userInfo.nickName
       },
       method: 'get',
-      success: function (res) {
-        var data = res.data
+      success: res => {
         that.setData({
-          bookList: data
+          bookList: res.data
         })
       }
     })
   },
   //还书
   borrow: function (e) {
-    var id = e.target.dataset.id,
-      state = e.target.dataset.state,
-      user = app.globalData.userInfo.nickName,
-      that = this;
+    let that = this;
+    let state = e.target.dataset.state;
     if (state) {
       state = false
     } else {
@@ -37,18 +35,18 @@ Page({
     wx.request({
       url: "http://localhost:8085/api/updateBooks",
       data: {
-        id: id,
-        user: user,
+        id: e.target.dataset.id,
+        user: app.globalData.userInfo.nickName,
         state: state
       },
       method: 'put',
-      success: function (res) {
+      success: res => {
         if (res.data) {
           wx.showToast({
             title: '还书成功',
             icon: 'success',
             duration: 1000,
-            success:function(){
+            success: () => {
               that.init();
             }
           })

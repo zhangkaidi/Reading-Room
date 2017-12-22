@@ -37,7 +37,7 @@ router.put('/api/updateBooks', (req, res) => {
   });
 });
 
-//获取书籍信息  
+//获取所有书籍信息  
 router.get('/api/getBooks', (req, res) => {
   // 通过模型去查找数据库
   models.books.find({}, (err, data) => {
@@ -61,7 +61,7 @@ router.get('/api/getBorrowBooksId', (req, res) => {
       res.json(err);
       console.log(err);
     } else {
-      if (data.length==0) {
+      if (data.length == 0) {
         res.json(false);
       } else {
         res.json(true);
