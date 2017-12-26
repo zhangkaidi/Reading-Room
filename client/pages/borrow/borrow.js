@@ -15,7 +15,7 @@ Page({
       data: {
         user: app.globalData.userInfo.nickName
       },
-      method: 'get',
+      method: 'GET',
       success: res => {
         that.setData({
           bookList: res.data
@@ -39,7 +39,7 @@ Page({
         user: app.globalData.userInfo.nickName,
         state: state
       },
-      method: 'put',
+      method: 'PUT',
       success: res => {
         if (res.data) {
           wx.showToast({

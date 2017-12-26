@@ -2,7 +2,7 @@
   position: fixed;
   width: 55rpx;
   height: 55rpx;
-  bottom: 80rpx;
+  bottom: 50rpx;
   right: 95rpx;
 }
 

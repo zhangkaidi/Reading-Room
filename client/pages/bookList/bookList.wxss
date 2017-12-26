@@ -1,67 +1,71 @@
 /* pages/bookShow/bookShow.wxss */
-image{
-  width:150rpx;
-  height:200rpx;
+
+image {
+  width: 150rpx;
+  height: 200rpx;
 }
-view{
+
+view {
   font-size: 12px;
 }
-.lt{
-  float:left;
+
+.lt {
+  float: left;
 }
-.clear{
+
+.clear {
   clear: both;
-  margin-bottom:5px;
+  height: 220rpx;
+  margin-bottom: 10rpx;
 }
+
 .clear {
   zoom: 1;
 }
+
 .clear:after {
   display: block;
   clear: both;
   content: "";
   visibility: hidden;
-  height: 0
-  }
-.book-list{
-  padding:0 12rpx;
+  height: 0;
 }
-.lt-con{
-  padding:0 7px;
-  width:210px;
-  
+
+.book-list {
+  padding: 0 12rpx;
 }
-.title{
+
+.lt-con {
+  padding: 0 14rpx;
+  width: 420rpx;
+}
+
+.title {
   font-size: 14px;
   text-align: center;
   color: #1296db;
   overflow: hidden;
   text-overflow: hidden;
-  white-space:nowrap;
+  white-space: nowrap;
 }
-.summary{
-  text-overflow: hidden;
-  height:30px;
-  overflow: hidden;
-}
-.scan-img{
-  position: fixed;
-  width:55rpx;
-  height:55rpx;
-  bottom:80rpx;
-  right:95rpx;
 
+.summary {
+  text-overflow: hidden;
+  height: 60rpx;
   overflow: hidden;
 }
-.scan-img{
+
+.scan-img {
   position: fixed;
-  width:55rpx;
-  height:55rpx;
-  bottom:80rpx;
-  right:95rpx;
+  width: 55rpx;
+  height: 55rpx;
+  bottom: 50rpx;
+  right: 95rpx;
+  overflow: hidden;
 }
-.state{
-line-height: 200rpx;
-color: #1296db;
-font-size:14px;
+
+.state {
+  line-height: 200rpx;
+  color: #1296db;
+  font-size: 14px;
 }

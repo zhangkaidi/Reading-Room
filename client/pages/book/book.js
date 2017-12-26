@@ -15,6 +15,7 @@ Page({
       data: {
         id: bookId
       },
+      type:"GET",
       success: res => {
         if (res.data) {
           wx.showModal({
@@ -40,7 +41,7 @@ Page({
     wx.request({
       url: "http://localhost:8085/api/createBooks",
       data: data,
-      method: 'post',
+      method: 'POST',
       success: res => {
         if (res) {
           //编辑完成跳转列表页面

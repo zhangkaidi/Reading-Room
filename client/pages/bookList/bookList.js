@@ -12,7 +12,7 @@ Page({
     wx.request({
       url: "http://localhost:8085/api/getBooks",
       data: {},
-      method: 'get',
+      method: 'GET',
       success: res => {
         if (res) {
           that.setData({
@@ -29,6 +29,7 @@ Page({
   borrow: function (e) {
     let that = this;
     let state = e.target.dataset.state;
+    let userName = app.globalData.userInfo.nickName;
     if (state) {
       state = false
     } else {
@@ -38,10 +39,10 @@ Page({
       url: "http://localhost:8085/api/updateBooks",
       data: {
         id: e.target.dataset.id,
-        user: app.globalData.userInfo.nickName,
+        user: userName,
         state: state
       },
-      method: 'put',
+      method: 'PUT',
       success: res => {
         if (res.data) {
           wx.showToast({
