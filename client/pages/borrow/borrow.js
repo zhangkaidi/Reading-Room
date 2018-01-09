@@ -27,11 +27,7 @@ Page({
   borrow: function (e) {
     let that = this;
     let state = e.target.dataset.state;
-    if (state) {
-      state = false
-    } else {
-      state = true
-    };
+    state == false ? state = true : state = false
     wx.request({
       url: "http://localhost:8085/api/updateBooks",
       data: {
